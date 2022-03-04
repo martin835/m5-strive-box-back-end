@@ -1,6 +1,6 @@
 import { extname } from "path";
 import createHttpError from "http-errors";
-const allowedExtensions = [".jpg", ".png", ".pdf"];
+const allowedExtensions = [".jpg", ".png", ".pdf", ".gif"];
 
 export const fileFilter = (req, res, next) => {
   const extension = extname(req.file.originalname);

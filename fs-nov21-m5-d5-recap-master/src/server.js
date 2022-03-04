@@ -1,5 +1,5 @@
 import express from "express";
-
+import cors from "cors";
 import { PUBLIC_FOLDER_PATH } from "./utils/fs-utils.js";
 import { errorHandler } from "./errorHandler.js";
 import filesRouter from "./service/files/route.js";
@@ -10,9 +10,10 @@ const server = express();
 
 // public folder is accessible to anyone under '/'
 server.use(express.static(PUBLIC_FOLDER_PATH));
+console.log(PUBLIC_FOLDER_PATH);
 
 // data exchange language will be json --> means -> parse the body as json
-
+server.use(cors());
 server.use(express.json());
 
 server.use("/files", filesRouter);

@@ -45,7 +45,7 @@ filesRouter.post(
   async (req, res, next) => {
     try {
       const { url, fileName } = await saveFile(req.file, true);
-      const ip = await publicIp.v4();
+      /* const ip = await publicIp.v4(); */
       const fileObject = {
         id: uuid(),
         originalName: req.file.originalname,
@@ -55,6 +55,7 @@ filesRouter.post(
         updatedAt: new Date().toString(),
       };
       await saveFileObject(fileObject);
+      console.log("ping - file upload request recieved");
       res.status(201).send(fileObject);
     } catch (error) {
       next(createHttpError(500, "File is not uploaded"));
@@ -120,6 +121,7 @@ filesRouter.put(
             updatedAt: new Date().toString(),
           };
           await fs.writeJSON(FILES_JSON_PATH, fileObjects);
+
           res.send(fileObjects[fileObjectIndex]);
         } else {
           next(createHttpError(404, "not found!"));

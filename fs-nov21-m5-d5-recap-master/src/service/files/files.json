@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "69a1140e-dd9b-47af-8101-c3beefd315ea",
+    "originalName": "yoda.gif",
+    "url": "http://localhost:5001/00cf3511-a8fd-4d12-af1c-c60961faf096.gif",
+    "fileName": "00cf3511-a8fd-4d12-af1c-c60961faf096.gif",
+    "createdAt": "Fri Mar 04 2022 15:19:34 GMT+0100 (Central European Standard Time)",
+    "updatedAt": "Fri Mar 04 2022 15:19:34 GMT+0100 (Central European Standard Time)"
+  },
+  {
+    "id": "b0f5f6e0-cae3-479d-8771-d36388801d72",
+    "originalName": "51gaR7CXhKL_large.jpg",
+    "url": "http://localhost:5001/8a39a8a1-d897-4419-be45-c797bb240a97.jpg",
+    "fileName": "8a39a8a1-d897-4419-be45-c797bb240a97.jpg",
+    "createdAt": "Fri Mar 04 2022 15:23:29 GMT+0100 (Central European Standard Time)",
+    "updatedAt": "Fri Mar 04 2022 15:23:29 GMT+0100 (Central European Standard Time)"
+  }
+]
