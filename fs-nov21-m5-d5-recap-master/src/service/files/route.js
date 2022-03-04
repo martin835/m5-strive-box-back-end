@@ -29,6 +29,11 @@ const saveFileObject = async (fileObject) => {
 
 const filesRouter = Router();
 
+filesRouter.use((req, res, next) => {
+  console.log("Time: ", Date.now());
+  next();
+});
+
 filesRouter.get("/", async (req, res, next) => {
   try {
     const files = await getFileObjects();
@@ -69,6 +74,10 @@ filesRouter.get("/:fileName", async (req, res, next) => {
     const exists = await fs.pathExists(filePath);
     if (exists) {
       res.download(filePath);
+      /* https://www.geeksforgeeks.org/express-js-res-download-function/#:~:text=The%20res.,prompt%20the%20user%20to%20download.&text=Parameters%3A%20The%20filename%20is%20the,fn%20is%20a%20callback%20function.
+      The res.download() function transfers the file at path as an ‘attachment’. Typically, browsers will prompt the user to download.
+      
+      */
     } else {
       next(createHttpError(404, `${req.params.fileName} is not found`));
     }
